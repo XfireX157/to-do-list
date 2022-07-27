@@ -1,9 +1,10 @@
-export interface IProps {
-    id?: string
+import { InputHTMLAttributes } from "react";
+
+export type IProps = {
     backgroundColor?: string
     textColor?: string
-    placeholder: string
     placeHolderColor?: string
-    Change?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    value?: <HTMLInputElement>
-}
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value: string
+  } &
+    React.InputHTMLAttributes<HTMLInputElement>

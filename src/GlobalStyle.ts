@@ -28,20 +28,13 @@ button {
 	color: inherit; 
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
-
 body {
 	display: flex;
 	justify-content: center;
-	font-family: 'Manjari', sans-serif;
 	height: 100%;
 	width: 100%;
 	box-sizing: border-box;
 }
-
-    #root {
-        width: 100%;
-    }
 
     ::-webkit-scrollbar {
         width: 8px;

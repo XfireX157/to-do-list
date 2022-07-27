@@ -6,7 +6,7 @@ const Media = {
     Laptop: "@media(max-width: 1024px)"
 }
 
-export const Input = styled.input.attrs({ type: "text" })<IProps>`
+export const Input = styled.input<IProps>`
     width: 100%;
     padding: 8px 12px 4px;
     box-sizing: border-box;

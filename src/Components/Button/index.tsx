@@ -1,11 +1,11 @@
 import React from "react"
 import * as C from './style'
-import {IProps} from './Types/props'
+import { IPropsButton } from "./Types/props"
 
-export const Button: React.FC <IProps> = ({backgroundColor, children, txtColor}) => {
+export const Button: React.FC <IPropsButton> = ({backgroundColor, children, txtColor, ...rest}) => {
     return(
-        <C.Btn backgroundColor={backgroundColor} txtColor={txtColor}>
-            {children}
+        <C.Btn  backgroundColor={backgroundColor} txtColor={txtColor}>
+           {children}
         </C.Btn>
     )
 }

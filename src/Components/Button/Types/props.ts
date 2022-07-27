@@ -1,7 +1,7 @@
-import {ReactNode } from "react";
+import  {ReactNode } from "react";
 
-export interface IProps {
+export type IPropsButton = {
     backgroundColor?: string
     txtColor?: string
     children: ReactNode
-}
+} & React.ButtonHTMLAttributes<HTMLButtonElement>

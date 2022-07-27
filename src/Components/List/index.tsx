@@ -4,7 +4,7 @@ import * as C from './style'
 
 const List = () => {
 
-    const [tasks, setTasks] = useState([])
+    const [listTasks, setListTasks] = useState('')
 
     return(
         <C.ListTasks>
