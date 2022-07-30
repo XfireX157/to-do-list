@@ -8,7 +8,6 @@ export const InputTime: React.FC <IProps> = ({ backgroundColor, placeHolderColor
             backgroundColor={backgroundColor}
             placeHolderColor={placeHolderColor}
             textColor={textColor}
-            required
             {...rest}
         />        
     )

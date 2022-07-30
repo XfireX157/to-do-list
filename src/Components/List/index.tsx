@@ -1,19 +1,34 @@
-import React, { useState } from "react"
-
+import { ITasks } from '../../Shared/Types/Tasks'
 import * as C from './style'
 
-const List = () => {
+interface Props {
+    tasks: ITasks[]
+    selectedTasks: (tasksSelect: ITasks) => void
+}
 
-    const [listTasks, setListTasks] = useState('')
+const List = ({tasks, selectedTasks}: Props, { task, time, selection, complet, id}: ITasks) => {
 
     return(
         <C.ListTasks>
             <h2>Estudos do dia</h2>
             <ul>
-                <li className="item">
-                    <h3>React</h3>
-                    <span>01:00:00</span>
-                </li>
+                {tasks.map((item) => (
+                 <li 
+                 className={`item ${selection ? "itemSelecionado" : ""}`}
+                 key={item.id} 
+                 onClick={() => selectedTasks(
+                    {
+                        task, 
+                        time, 
+                        selection, 
+                        complet, 
+                        id
+                 })}
+                 >
+                     <h3>{item.task}</h3>
+                     <span>{item.time}</span>
+                 </li>
+                ))}
             </ul>
         </C.ListTasks>
     )

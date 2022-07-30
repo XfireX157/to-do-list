@@ -16,7 +16,6 @@ export const InputText: React.FC <IProps> = ({
                 placeHolderColor={placeHolderColor}
                 onChange={onChange}
                 value={value}
-                required
                 {...rest}
             />
     )
