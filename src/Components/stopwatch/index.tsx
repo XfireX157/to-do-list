@@ -10,7 +10,7 @@ export const Stopwatch = () => {
             <C.WatchWrapper>
                 <Watch/>
             </C.WatchWrapper>
-            <Button 
+            <Button
                 backgroundColor="#88bcd1" 
                 txtColor="#272626">
                 Começar

@@ -3,28 +3,17 @@ import * as C from './style'
 
 interface Props {
     tasks: ITasks[]
-    selectedTasks: (tasksSelect: ITasks) => void
 }
 
-const List = ({tasks, selectedTasks}: Props, { task, time, selection, complet, id}: ITasks) => {
-
+const List = ({tasks}: Props) => {
     return(
         <C.ListTasks>
             <h2>Estudos do dia</h2>
             <ul>
-                {tasks.map((item) => (
+                {tasks.map((item, index) => (
                  <li 
-                 className={`item ${selection ? "itemSelecionado" : ""}`}
-                 key={item.id} 
-                 onClick={() => selectedTasks(
-                    {
-                        task, 
-                        time, 
-                        selection, 
-                        complet, 
-                        id
-                 })}
-                 >
+                 className="item"
+                 key={index}>
                      <h3>{item.task}</h3>
                      <span>{item.time}</span>
                  </li>

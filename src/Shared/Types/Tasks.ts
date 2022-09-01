@@ -1,7 +1,5 @@
 export interface ITasks {
-    task: string
-    time: string
-    selection: boolean
-    complet: boolean
-    id: string
+    task?: string
+    time?: string
+    id?: string
 }

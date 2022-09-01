@@ -10,23 +10,17 @@ function Home() {
 
   const [tasks, setTasks] = useState<ITasks[]>([])
 
-  const [selected, setSelected] = useState<ITasks>()
-
-  function selectedTasks(tasksSelected: ITasks) {
-    setSelected(tasksSelected)
-    setTasks(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
-      ...tarefa,
-      selection: tarefa.id === tasksSelected.id ? true : false
-    })))
+  const newList = (list: any) => {
+      setTasks([...tasks, list])
+      console.log(tasks)
   }
 
   return (
    <C.AppStyle>
-    <Form  setTasks={setTasks} />
-    <List 
-      tasks={tasks} 
-      selectedTasks={selectedTasks}
-    />
+    <Form setTasks={(list: any) => newList(list)} />
+      <List
+        tasks={tasks}
+      />
     <Stopwatch/>
    </C.AppStyle>
   );

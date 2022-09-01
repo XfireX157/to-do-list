@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "../Button";
 import { InputText } from "../inputText/index";
 import { InputTime } from "../inputTime";
-import { v4 as uuidv4} from 'uuid'
 
 import * as C from './style'
 
@@ -23,20 +22,15 @@ const Form = ({setTasks}: IFormProps) => {
             setError(true)
         }else{
             setError(false)
-            setTasks((preve: any) => [...preve, 
-                {
-                    task, 
-                    time, 
-                    selection: false, 
-                    complet: false,
-                    id: uuidv4()
-                }
-            ])
+            setTasks( 
+               {
+                 task,
+                 time
+               })
 
             setTask('')
             setTime('00:00')
         }
-           
     }
 
     return(

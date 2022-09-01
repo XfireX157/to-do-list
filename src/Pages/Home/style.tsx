@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Box = styled.div`
+    color: #fff;
+    background-color: #fff;
+`
+
 export const AppStyle = styled.div`
   display: grid;
   grid-template-rows: min-content min-content auto;
