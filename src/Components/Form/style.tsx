@@ -4,6 +4,7 @@ const Media = {
     Laptop: "@media(max-width: 1024px)"
 }
 
+
 export const NewTask = styled.form`
     display:flex;
     flex-direction: column;
@@ -32,6 +33,7 @@ export const InputContainer = styled.div`
     label {
       margin-bottom: 8px;
       font-size: 1.25rem;
+      color: #fff;
     }
 
     ${Media.Laptop}{

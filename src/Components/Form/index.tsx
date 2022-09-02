@@ -18,7 +18,7 @@ const Form = ({setTasks}: IFormProps) => {
     const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if(task.length < 4 || time === '00:00'){
+        if(task.length <= 4 || task.length >= 14 || time === '00:00'){
             setError(true)
         }else{
             setError(false)

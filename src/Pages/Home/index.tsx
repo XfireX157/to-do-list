@@ -9,16 +9,18 @@ import * as C from './style'
 function Home() {
 
   const [tasks, setTasks] = useState<ITasks[]>([])
+  const [isActive, setIsActive] = useState<any>(null)
 
   const newList = (list: any) => {
       setTasks([...tasks, list])
-      console.log(tasks)
   }
+
 
   return (
    <C.AppStyle>
     <Form setTasks={(list: any) => newList(list)} />
       <List
+        isActive={isActive} setIsActive={setIsActive}
         tasks={tasks}
       />
     <Stopwatch/>

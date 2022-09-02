@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface IProps {
+  isActive?: boolean
+}
+
 export const ListTasks = styled.aside`
     grid-area: tarefas;
     height: 100%;
@@ -31,30 +35,6 @@ export const ListTasks = styled.aside`
         max-height: 500px;
       }
     }
-      
-  .item {
-    background-color: #4D4D4D;
-    border-radius: 8px;
-    color: #ccc;
-    box-shadow: 2px 4px 4px #0000009F;
-    padding: 12px;
-    margin-bottom: 8px;
-    position: relative;
-    cursor: pointer;
-  
-    h3 {
-      margin-bottom: 8px;
-      word-break: break-all;
-    }
-  
-    span {
-      color: #D0D0D0;
-    }
-  
-    @media screen and (min-width:1280px) {
-      font-size: 1.8rem;
-    }
-  }
   
   .itemSelecionado {
     background-color: #292929;
@@ -78,5 +58,35 @@ export const ListTasks = styled.aside`
       height: 43px;
     }
   }
+`
+
+export const ListLi = styled.li<IProps>`
+  background-color: #4D4D4D;
+    border-radius: 8px;
+    color: #ccc;
+    box-shadow: 2px 4px 4px #0000009F;
+    padding: 12px;
+    margin-bottom: 8px;
+    position: relative;
+    cursor: pointer;
+    
+    ${({isActive}) => isActive ? `
+      background-color: red;
+    `: `
+      background-color: blue;
+    `}
+  
+    h3 {
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+  
+    span {
+      color: #D0D0D0;
+    }
+  
+    @media screen and (min-width:1280px) {
+      font-size: 1.8rem;
+    }
 `
 

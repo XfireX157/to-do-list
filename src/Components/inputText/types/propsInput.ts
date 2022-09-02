@@ -1,5 +1,3 @@
-import { InputHTMLAttributes } from "react";
-
 export type IProps = {
     backgroundColor?: string
     textColor?: string
