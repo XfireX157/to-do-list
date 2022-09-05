@@ -5,14 +5,16 @@ import { InputTime } from "../inputTime";
 
 import * as C from './style'
 
-interface IFormProps {
+export interface IFormProps {
     setTasks: Function
+    task: any
+    setTask:  React.Dispatch<React.SetStateAction<string>>
+    time: any
+    setTime: React.Dispatch<React.SetStateAction<string>>
 }
 
-const Form = ({setTasks}: IFormProps) => {
+const Form = ({setTasks, task, setTask, time, setTime}: IFormProps) => {
 
-    const [task, setTask] = useState('')
-    const [time, setTime] = useState('00:00')
     const [error, setError] = useState(false)
 
     const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,7 +41,6 @@ const Form = ({setTasks}: IFormProps) => {
                 <label htmlFor="assignment">
                     Adicione um novo estudo
                 </label>
-                
                 <InputText
                 type="text"
                 id="assignment"
