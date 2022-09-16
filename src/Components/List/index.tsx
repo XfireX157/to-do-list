@@ -5,14 +5,14 @@ import * as C from './style'
 
 interface Props {
     tasks: ITasks[],
+    setTasks:  React.Dispatch<React.SetStateAction<ITasks[]>>
     isActive?: boolean | undefined
     setIsActive?:  any
+    setEditTask: React.Dispatch<React.SetStateAction<null>>
     onClick?: React.MouseEventHandler<HTMLDivElement>
-    remove: (tasksName: any) => void
-    edit: (id: any) => void
 }
 
-const List = ({tasks, isActive, setIsActive, remove, edit}: Props) => {
+const List = ({tasks, setTasks, isActive, setIsActive, setEditTask}: Props) => {
 
     function selectFiltered(item: ITasks) {
         if(isActive !== item.task){
@@ -21,24 +21,29 @@ const List = ({tasks, isActive, setIsActive, remove, edit}: Props) => {
             setIsActive(null)
         }
     }
+
+    const HandleRemove = (id: number) => {
+        const setHandle = tasks.filter((item) => item.id !== id)
+        setTasks(setHandle)
+    }
   
     return(
         <C.ListTasks>
             <h2>Estudos do dia</h2>
             <ul>
-                {tasks.map((item) => (
+                {tasks.map((item: any, index: any) => (
                      <C.ListLi
-                        key={item.id}
+                        key={index + item.id}
                         isActive={isActive === item.task ? true : false}
                         className="item"
                         onClick={() => {
                         selectFiltered(item)
                         }}>
                             <h3>{item.task}</h3>
-                                 <span>{item.time}</span>
+                            <span>{item.time}</span>
                             <div>
-                                <span onClick={() => remove(item.task)}><BsFillTrashFill/></span>
-                                <span onClick={() => edit(item.task)}><AiFillEdit/></span>
+                                <span onClick={() => HandleRemove(item.id)}><BsFillTrashFill/></span>
+                                <span onClick={() => setEditTask({...item, index})}><AiFillEdit/></span>
                             </div>
                  </C.ListLi>
                 ))}

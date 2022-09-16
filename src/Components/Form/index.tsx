@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Button } from "../Button";
 import { InputText } from "../inputText/index";
 import { InputTime } from "../inputTime";
@@ -11,6 +12,8 @@ export interface IFormProps {
     setTask:  React.Dispatch<React.SetStateAction<string>>
     time: any
     setTime: React.Dispatch<React.SetStateAction<string>>
+    editTask: null
+    setEditTask: React.Dispatch<React.SetStateAction<null>>
 }
 
 const Form = ({setTasks, task, setTask, time, setTime}: IFormProps) => {
@@ -26,8 +29,8 @@ const Form = ({setTasks, task, setTask, time, setTime}: IFormProps) => {
             setError(false)
             setTasks( 
                {
-                 task,
-                 time
+                task,
+                time
                })
 
             setTask('')
